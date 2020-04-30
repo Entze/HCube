@@ -1,0 +1,35 @@
+name:                hcube
+version:             0.1.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/Entze/hcube#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Lukas Grassauer
+maintainer:          entze@grassauer.eu
+copyright:           2020 Lukas Grassauer
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     HCube
+  build-depends:       base >= 4.7 && < 5
+  default-language:    Haskell2010
+
+test-suite HCubeSpec
+  type:                exitcode-stdio-1.0
+  ghc-options:         -Wall
+  main-is:             HCubeSpec.hs
+  hs-source-dirs:      test
+  build-depends:       base >= 4.7 && < 5,
+                       hspec >= 2.7 && <3,
+                       QuickCheck >= 2.13 && <3,
+                       hcube
+  default-language:    Haskell2010
+
+
+source-repository head
+  type:     git
+  location: https://github.com/Entze/hcube
